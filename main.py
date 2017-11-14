@@ -1,4 +1,5 @@
 import sqlite3
+
 conn = sqlite3.connect('network.db')
 
 c = conn.cursor()
@@ -9,8 +10,6 @@ if exists[0] == 0:
     c.execute('''CREATE TABLE addresses
                  (ip text, mask text)''')
     print('Made Table')
-
-
 
 while 1:
     ip = input("Please input IP address: ")
@@ -23,5 +22,5 @@ while 1:
 
 conn.commit()
 
-for row in c.execute('SELECT * FROM addresses'):
-    print(row)
+# for row in c.execute('SELECT * FROM addresses'):
+#    print(row)
